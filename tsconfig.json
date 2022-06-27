@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "es2020",
+    "outDir": "dist",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
+    "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    "allowJs": true
+  },
+  "include": ["./src/**/*", "./typings/**/*"]
+}
