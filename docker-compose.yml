@@ -1,0 +1,7 @@
+version: '2.1'
+
+services:
+  landr-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
