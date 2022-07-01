@@ -48,7 +48,7 @@ wget
 WORKDIR /usr/src/app
 
 # Copy package.json and npm-shrinkwrap.json first for better cache on later pushes
-COPY package.json npm-shrinkwrap.json ./
+COPY package.json package-lock.json ./
 
 # Install NPM dependecies.
 RUN JOBS=MAX npm ci --unsafe-perm && npm cache verify && rm -rf /tmp/*
