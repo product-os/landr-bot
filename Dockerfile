@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:no-systemd-12.2.0
+FROM balena/open-balena-base:no-systemd-v12.2.0
 
 # Install dependencies required to run puppeteer
 RUN install_packages -f \
@@ -42,13 +42,17 @@ xdg-utils \
 libkrb5-dev \
 build-essential \
 python \
+libglib2.0-dev \
+libexpat1-dev \
+libvips-dev \
+libvips \
 wget
 
 # Defines our working directory in container
 WORKDIR /usr/src/app
 
 # Copy package.json and npm-shrinkwrap.json first for better cache on later pushes
-COPY package.json npm-shrinkwrap.json ./
+COPY ./package*.json ./
 
 # Install NPM dependecies.
 RUN JOBS=MAX npm ci --unsafe-perm && npm cache verify && rm -rf /tmp/*
